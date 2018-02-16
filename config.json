@@ -2,12 +2,66 @@
   "version": "v1",
   "interval": 60,
   "data": [{
-    "name": "Citadel",
+    "name": "AWS Website",
     "host": "devclub.in",
-    "heartbeat": "<heartbeat_url>",
+    "heartbeat": "https://devclub.in",
     "emails": [
       "devclub.iitd@gmail.com"
     ],
-    "slackwebhook": "<webhook_url>"
+    "slackwebhook": null
+  },
+  {
+    "name": "AWS Join Website",
+    "host": "join.devclub.in",
+    "heartbeat": "https://join.devclub.in",
+    "emails": [
+      "devclub.iitd@gmail.com"
+    ],
+    "slackwebhook": null
+  },
+  {
+    "name": "Internal Website",
+    "host": "devclub.cse.iitd.ac.in",
+    "heartbeat": "http://devclub.cse.iitd.ac.in/",
+    "emails": [
+      "devclub.iitd@gmail.com"
+    ],
+    "slackwebhook": null
+  },
+  {
+    "name": "Citadel",
+    "host": "study.devclub.cse.iitd.ac.in",
+    "heartbeat": "http://study.devclub.cse.iitd.ac.in/books/heartbeat",
+    "emails": [
+      "devclub.iitd@gmail.com"
+    ],
+    "slackwebhook": null
+  },
+  {
+    "name": "GradeSpot",
+    "host": "grades.devclub.cse.iitd.ac.in",
+    "heartbeat": "http://grades.devclub.cse.iitd.ac.in",
+    "emails": [
+      "devclub.iitd@gmail.com"
+    ],
+    "slackwebhook": null
+  },
+  {
+    "name": "Omegle",
+    "host": "omegle.devclub.cse.iitd.ac.in",
+    "heartbeat": "http://www.cse.iitd.ac.in/devclub/omegle",
+    "emails": [
+      "devclub.iitd@gmail.com"
+    ],
+    "slackwebhook": null
+  },
+  {
+    "name": "File Send",
+    "host": "fs.devclub.cse.iitd.ac.in",
+    "heartbeat": "http://fs.devclub.cse.iitd.ac.in",
+    "emails": [
+      "devclub.iitd@gmail.com"
+    ],
+    "slackwebhook": null
   }]
 }

@@ -81,7 +81,7 @@ function notifyAll(next) {
                 }
             }
             if(host.slackwebhook) {
-                utils.notifySlack(host.slackwebhook,{text: subject+"\n\n"+body});
+                utils.notifySlack(host.slackwebhook || process.env.SLACK_WEBHOOK_URL,{text: subject+"\n\n"+body});
             }
             callback();
         } else {
