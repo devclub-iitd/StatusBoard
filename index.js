@@ -77,7 +77,7 @@ function notifyAll(next) {
             body += "Heartbeat Response: "+host.heartbeatData+"\n";
             if(host.emails) {
                 for(let i=0;i<host.emails.length;i++) {
-                    mailer.sendMail(host.emails[i],"statusboard",subject,body);
+//                    mailer.sendMail(host.emails[i],"statusboard",subject,body);
                 }
             }
             if(host.slackwebhook) {
@@ -100,9 +100,7 @@ function notifyAll(next) {
 function periodicCheck() {
     console.log("Periodic Check started");
     pingTest(function (pingVal) {
-        console.log("Status Check started");
         statusTest(function (statusVal) {
-            console.log("Notfication Module started");
             notifyAll(function () {
                 setTimeout(periodicCheck, 1000 * CONFIG.interval);
             });

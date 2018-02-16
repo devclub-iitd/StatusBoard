@@ -1,6 +1,6 @@
 {
   "version": "v1",
-  "interval": 60,
+  "interval": 600,
   "data": [{
     "name": "AWS Website",
     "host": "devclub.in",
