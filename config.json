@@ -1,0 +1,13 @@
+{
+  "version": "v1",
+  "interval": 60,
+  "data": [{
+    "name": "Citadel",
+    "host": "devclub.in",
+    "heartbeat": "<heartbeat_url>",
+    "emails": [
+      "devclub.iitd@gmail.com"
+    ],
+    "slackwebhook": "<webhook_url>"
+  }]
+}

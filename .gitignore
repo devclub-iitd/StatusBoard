@@ -166,3 +166,6 @@ typings/
 
 # next.js build output
 .next
+
+#CUSTOM
+ignore/
