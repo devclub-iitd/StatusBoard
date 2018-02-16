@@ -1,13 +1,4 @@
-# status_board
-Status checker for our other DevClub applications.
+# Status Board
+Status checker for our other DevClub applications over different servers
 
 -------------------------------------------------
-### To set up using conda:
-```bash
-conda create -n <Name of your env> python=3
-source activate <Name of your env>
-pip install -r requirements.txt
-```
---------------------------------------------------
-### To-do
-Yet to be decided
