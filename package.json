@@ -1,0 +1,26 @@
+{
+  "name": "status_board",
+  "version": "1.0.0",
+  "description": "Status checker for other DevClub applications over different servers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devclub-iitd/status_board.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devclub-iitd/status_board/issues"
+  },
+  "homepage": "https://github.com/devclub-iitd/status_board#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "async": "^2.6.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "ping": "^0.2.2"
+  }
+}
