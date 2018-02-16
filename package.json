@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Status checker for other DevClub applications over different servers",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/devclub-iitd/status_board.git"
@@ -22,6 +19,10 @@
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "jshint": "^2.9.5",
     "ping": "^0.2.2"
+  },
+  "scripts": {
+    "test": "jshint index.js"
   }
 }

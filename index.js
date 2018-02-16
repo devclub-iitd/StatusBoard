@@ -1,5 +1,5 @@
-const express = require('express')
-const bodyParser = require('body-parser');
+var express = require('express');
+var bodyParser = require('body-parser');
 var assert = require('assert');
 var ping = require('ping');
 var async = require('async');
@@ -9,7 +9,7 @@ var utils = require('./utils');
 
 var hosts = ['devclub.in', 'join.devclub.in', 'devclub.cse.iitd.ac.in', 'fs.devclub.cse.iitd.ac.in'];
 
-const app = express()
+var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
@@ -20,12 +20,12 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(express.static('static'))
+app.use(express.static('static'));
 
 app.set('view engine', 'ejs');
 
 function pingTest(next){
-    response = {}
+    response = {};
     function pingHost(host,callback){
         ping.promise.probe(host)
             .then(function (res) {
@@ -44,7 +44,7 @@ function pingTest(next){
 }
 
 function statusTest(next){
-    response = {}
+    response = {};
     function statusHost(host,callback){
         request('http://'+ host,function(err,resp,data){
             response[host] = resp.statusCode;
@@ -77,4 +77,4 @@ app.get('/',function(req,res){
 });
 
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(3000,console.log('Example app listening on port 3000!'));
