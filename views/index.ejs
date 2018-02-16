@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Table Style</title>
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+<div class="table-title">
+<h3>Status Board</h3>
+</div>
+<table class="table-fill">
+<thead>
+<tr>
+<th class="text-left">Host</th>
+<th class="text-left">Alive</th>
+<th class="text-left">Status Code</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+<% for(var i=0; i< hosts.length; i++) { %>
+
+    <tr>
+    <td class="text-left"><%= hosts[i] %></td>
+    <td class="text-left"><%= pingVal[hosts[i]] %></td>
+    <td class="text-left"><%= statusVal[hosts[i]] %></td>    
+    </tr>
+<% } %>
+</tbody>
+</table>
+</body>

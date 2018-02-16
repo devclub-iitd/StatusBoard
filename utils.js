@@ -10,6 +10,16 @@ function resp(res, statusCode, msg, data = null) {
   }
 }
 
+function makeJSON(statusCode, msg, data = null) {
+    return {
+    'code': statusCode,
+    'message': msg,
+    'data': data
+    };
+}
+  
+
 module.exports = {
   'res': resp,
+  'makeJSON' : makeJSON,
 }

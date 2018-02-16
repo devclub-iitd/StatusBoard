@@ -20,8 +20,11 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(express.static('static'))
 
-function pingTest(req,res){
+app.set('view engine', 'ejs');
+
+function pingTest(next){
     response = {}
     function pingHost(host,callback){
         ping.promise.probe(host)
@@ -32,15 +35,15 @@ function pingTest(req,res){
     }
     async.each(hosts,pingHost,function(err){
         if(err){
-            utils.res(res,500,"Internal Server Error");
+            next(utils.makeJSON(500,"Internal Server Error"));
         }
         else{
-            utils.res(res,200,response);
+            next(utils.makeJSON(200,"Success",response));
         }
-    })
+    });
 }
 
-function statusTest(req,res){
+function statusTest(next){
     response = {}
     function statusHost(host,callback){
         request('http://'+ host,function(err,resp,data){
@@ -50,17 +53,28 @@ function statusTest(req,res){
     }
     async.each(hosts,statusHost,function(err){
         if(err){
-            utils.res(res,500,"Internal Server Error");
+            next(utils.makeJSON(500,"Internal Server Error"));
         }
         else{
-            utils.res(res,200,response);
+            next(utils.makeJSON(200,"Success",response));
         }
-    })
+    });
 }
 
 
 
-app.get('/pingTest',pingTest);
-app.get('/statusTest',statusTest);
+app.get('/',function(req,res){
+    pingTest(function(pingVal){
+        statusTest(function(statusVal){
+            res.render('index.ejs',{
+                hosts: hosts,
+                pingVal: pingVal.data,
+                statusVal: statusVal.data
+                }
+            );
+        });
+    });
+});
+
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
